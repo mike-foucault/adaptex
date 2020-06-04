@@ -23,7 +23,13 @@ be found at [https://hexdocs.pm/adaptex](https://hexdocs.pm/adaptex).
 
 ## Dev Notes
 
+docker build -t elixir-dev-inotify-tools:1.10.2 \
+  --build-arg USER_ID=$(id -u) \
+  --build-arg GROUP_ID=$(id -g) .
+
 docker run -it --rm \
-  --mount "type=bind,src=$(pwd),dst=/opt/shared/adaptex" \
-  --workdir /opt/shared/adaptex \
-  elixir-dev:1.10.2 /bin/bash
+  --mount "type=bind,src=$(pwd),dst=/opt/shared/workspace" \
+  --workdir /opt/shared/workspace \
+  elixir-dev-inotify-tools:1.10.2 /bin/bash
+
+MIX_ENV=test mix test.watch
