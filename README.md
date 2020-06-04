@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/mike-foucault/adaptex.svg?style=svg)](https://circleci.com/gh/mike-foucault/adaptex)
+
 # Adaptex
 
 **TODO: Add description**
